@@ -1,0 +1,25 @@
+{
+  "name": "tukebot",
+  "version": "0.0.1",
+  "description": "TUKEKOULUUN MARS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Heseduud/TukeBot.git"
+  },
+  "author": "Heseduud",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Heseduud/TukeBot/issues"
+  },
+  "homepage": "https://github.com/Heseduud/TukeBot#readme",
+  "dependencies": {
+    "discord.js": "^14.7.1",
+    "dotenv": "^16.0.3",
+    "mongoose": "^6.9.2"
+  }
+}
