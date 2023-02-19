@@ -10,7 +10,7 @@ function recurseFiles(directory) {
 		const absolute = path.join(directory, file);
 		if (fs.statSync(absolute).isDirectory()) return recurseFiles(absolute);
 		else return commandFiles.push(absolute);
-	})
+	});
 }
 
 recurseFiles('./commands');
