@@ -5,5 +5,5 @@ WORKDIR /usr/src/app
 COPY package*.json ./
 RUN npm install
 COPY . .
-RUN --mount=type=secret,id=_env,dst=/etc/secrets/.env node -r dotenv/config_path=/etc/secrets/.env deploy-commands.js
+RUN --mount=type=secret,id=_env,dst=/etc/secrets/.env node -r dotenv/config deploy-commands.js dotenv/config_path=/etc/secrets/.env 
 CMD ["npm", "start"]
