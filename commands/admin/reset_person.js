@@ -5,7 +5,7 @@ module.exports = {
   data: new SlashCommandBuilder()
     .setName('resetuser')
     .setDescription('Reset user')
-    .setDefaultMemberPermissions(0)
+    .setDefaultMemberPermissions(str(1 << 5))
     .addUserOption(option =>
       option.setName('user')
             .setDescription('User to reset')

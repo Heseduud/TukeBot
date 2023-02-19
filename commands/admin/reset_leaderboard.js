@@ -5,7 +5,7 @@ module.exports = {
   data: new SlashCommandBuilder()
     .setName('resetleaderboard')
     .setDescription('Reset the leaderboard')
-    .setDefaultMemberPermissions(0),
+    .setDefaultMemberPermissions(str(1 << 5)),
     async execute(interaction) {
       await resetLeaderboard();
       await interaction.reply({ content: 'Leaderboard reset! ', ephemeral: true });
