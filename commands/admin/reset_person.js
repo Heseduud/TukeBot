@@ -3,7 +3,7 @@ const { resetPerson } = require('../../db/mongoose');
 
 module.exports = {
   data: new SlashCommandBuilder()
-    .setName('resetUser')
+    .setName('resetuser')
     .setDescription('Reset user')
     .setDefaultMemberPermissions(0)
     .addUserOption(option =>
@@ -13,7 +13,7 @@ module.exports = {
     ),
     async execute(interaction) {
       const user = interaction.options.getUser('user');
-      await resetLeaderboard(user.id);
+      await resetPerson(user.id);
       await interaction.reply({ content: `User <@${user.id}> reset!`, ephemeral: true });
     }
 }

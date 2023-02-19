@@ -14,7 +14,6 @@ module.exports = {
 
       let count = 0;
       users.forEach((user) => {
-        console.log(user);
         if (count === 0) {
           embed.addFields({
             name: 'TOP NÄÄTÄ',

@@ -3,7 +3,7 @@ const { resetLeaderboard } = require('../../db/mongoose');
 
 module.exports = {
   data: new SlashCommandBuilder()
-    .setName('resetLeaderboard')
+    .setName('resetleaderboard')
     .setDescription('Reset the leaderboard')
     .setDefaultMemberPermissions(0),
     async execute(interaction) {
