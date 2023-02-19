@@ -21,7 +21,7 @@ function recurseFiles(directory) {
 recurseFiles('./commands');
 
 for (const file of commandFiles) {
-	const command = require(`./file`);
+	const command = require(`./${file}`);
 	if ('data' in command && 'execute' in command) {
 		client.commands.set(command.data.name, command);
 	} else {
