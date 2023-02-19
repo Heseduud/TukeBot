@@ -1,12 +1,24 @@
 const { REST, Routes } = require('discord.js');
 const fs = require('node:fs');
+const path = require('node:path');
 
+const commandFiles = [];
 const commands = [];
-const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
+
+function recurseFiles(directory) {
+	fs.readdirSync(directory).forEach(file => {
+		const absolute = path.join(directory, file);
+		if (fs.statSync(absolute).isDirectory()) return recurseFiles(absolute);
+		else return commandFiles.push(absolute);
+	})
+}
+
+recurseFiles('./commands');
 
 for (const file of commandFiles) {
-	const cmd = require(`./commands/${file}`);
+	const cmd = require(`./${file}`);
 	commands.push(cmd.data.toJSON());
+	console.log(`Deploying command: ./${file}`);
 }
 
 const rest = new REST({ version: '10' }).setToken(process.env.DISCORDTOKEN);

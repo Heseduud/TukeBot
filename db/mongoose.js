@@ -45,3 +45,11 @@ module.exports.getAllUsers = async () => {
   const res = await userSchema.find({});
   return res;
 }
+
+module.exports.resetLeaderboard = async () => {
+  await userSchema.updateMany({}, {kouluCount: 0});
+}
+
+module.exports.resetPerson = async (key) => {
+  await userSchema.findOneAndUpdate({id: key}, {kouluCount: 0});
+}

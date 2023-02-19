@@ -9,7 +9,7 @@ module.exports = {
       option.setName('user')
             .setDescription('KUKA LAITETAAN KOULUUN')
             .setRequired(true)
-      ),
+    ),
     async execute(interaction) {
       const user = interaction.options.getUser('user');
       const res = await addCount(user.id);

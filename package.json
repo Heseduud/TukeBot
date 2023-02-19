@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
+    "start": "node index.js",
+    "deploycmd": "node -r dotenv/config deploy-commands.js",
+    "wipecmd": "node -r dotenv/config wipe-commands.js" 
   },
   "repository": {
     "type": "git",
