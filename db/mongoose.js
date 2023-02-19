@@ -47,9 +47,9 @@ module.exports.getAllUsers = async () => {
 }
 
 module.exports.resetLeaderboard = async () => {
-  await userSchema.updateMany({}, {kouluCount: 0});
+  await userSchema.deleteMany({});
 }
 
 module.exports.resetPerson = async (key) => {
-  await userSchema.findOneAndUpdate({id: key}, {kouluCount: 0});
+  await userSchema.deleteOne({id: key});
 }
