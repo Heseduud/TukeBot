@@ -21,12 +21,11 @@ function recurseFiles(directory) {
 recurseFiles('./commands');
 
 for (const file of commandFiles) {
-	const filePath = path.join(commandsPath, file);
-	const command = require(filePath);
+	const command = require(`./file`);
 	if ('data' in command && 'execute' in command) {
 		client.commands.set(command.data.name, command);
 	} else {
-		console.log(`Command at ${filePath} missing data or execute property`);
+		console.log(`Command at ./${file} missing data or execute property`);
 	}
 }
 
