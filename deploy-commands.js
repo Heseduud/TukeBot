@@ -26,10 +26,10 @@ const rest = new REST({ version: '10' }).setToken(process.env.DISCORDTOKEN);
 (async () => {
   try {
     // Test guild gommands
-    await rest.put(
-      Routes.applicationGuildCommands(process.env.DISCORDCLIENTID, process.env.DISCORDGUILDID),
-      { body: commands }
-    );
+    // await rest.put(
+    //  Routes.applicationGuildCommands(process.env.DISCORDCLIENTID, process.env.DISCORDGUILDID),
+    //  { body: commands }
+    // );
     // Global commands
     await rest.put(
       Routes.applicationCommands(process.env.DISCORDCLIENTID),
