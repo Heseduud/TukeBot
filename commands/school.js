@@ -7,12 +7,12 @@ module.exports = {
     .setDescription('TUKEKOULUUN')
     .addUserOption(option =>
       option.setName('user')
-            .setDescription('KUKA LAITETAAN KOULUUN')
-            .setRequired(true)
+        .setDescription('KUKA LAITETAAN KOULUUN')
+        .setRequired(true)
     ),
-    async execute(interaction) {
-      const user = interaction.options.getUser('user');
-      const res = await addCount(user.id);
-      await interaction.reply(`<@${user.id}> TUKEKOULUUN! KOULUKERTOJA: ${res.kouluCount}`);
-    }
+  async execute (interaction) {
+    const user = interaction.options.getUser('user');
+    const res = await addCount(user.id);
+    await interaction.reply(`<@${user.id}> TUKEKOULUUN! KOULUKERTOJA: ${res.kouluCount}`);
+  }
 };
